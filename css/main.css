@@ -1,0 +1,78 @@
+html{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html *,
+html *:before,
+html *:after{
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+html, body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+span{
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.markdown-body{
+    width: 920px;
+    margin: 0 auto;
+    padding: 20px;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+.markdown-body h1{
+    border-bottom: none;
+}
+
+.app{
+    margin-bottom: 3em;
+}
+
+.example{
+    padding: 1em;
+}
+
+.scope-collection{
+    display: inline-block;
+    margin: 0.25em 0;
+    padding: 0.5em;
+    font-size: 0.9em;
+    text-align: center;
+    background-color: tomato;
+    white-space: nowrap;
+}
+
+.scope-collection .block{
+    display: block;
+}
+
+.scope-collection div{
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.scope-collection > div{
+    margin: 0 0.5em;
+    background-color: lightgreen;
+}
+
+.scope-collection > div > div{
+    background-color: lightblue;
+}
+
+.scope-collection > div > div > div{
+    background: lightyellow;
+}
+.scope-collection > div > div > div > div{
+    background: lightpink;
+}
+.scope-collection > div > div > div > div > div{
+    background: plum;
+}
