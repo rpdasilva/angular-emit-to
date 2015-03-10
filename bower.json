@@ -15,7 +15,7 @@
     "events"
   ],
   "license": "MIT",
-  "homepage": "http://philipdasilva.com",
+  "homepage": "https://github.com/rpdasilva/angular-emit-to",
   "ignore": [
     "**/.*",
     "node_modules",
