@@ -1,0 +1,29 @@
+{
+  "name": "angular-emit-to",
+  "main": "angular-emit-to.js",
+  "version": "0.1.0",
+  "authors": [
+    "Philip Da Silva <hello@philipdasilva.com>"
+  ],
+  "description": "An AngularJS module that provides new event dispatch paths to the existing event model",
+  "keywords": [
+    "angular",
+    "directive",
+    "emit",
+    "emit-to",
+    "event",
+    "events"
+  ],
+  "license": "MIT",
+  "homepage": "http://philipdasilva.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example",
+    "gulpfile.js",
+    "package.json"
+  ]
+}

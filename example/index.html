@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Emit-To</title>
+    <link rel="stylesheet" href="css/github-markdown.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Angular Emit-To Examples</h1>
+
+        <div id="ex1" class="app">
+            <h2>Example 1 &mdash; Scope#$emitTo</h2>
+            <p>Enter the emit id in the input below to "target" the scope you want to emit the event to. Press the "Emit From Here" button to emit an event from its corresponding scope.</p>
+
+            <div class="example">
+                <div class="control">
+                    <label>Emit event to id: <input type="text" ng-model="$root.emitId" ng-init="$root.emitId = 'box81'"></label>
+                    <button ng-click="$broadcast('clear')">Clear All Event Text</button>
+                </div>
+                <div class="scope-collection" ng-controller="Ctrl as ctrl" emit-to-id="box1">
+                    <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                    <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+
+                    <div ng-controller="Ctrl as ctrl" emit-to-id="box2">
+                        <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                        <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+
+                        <div ng-controller="Ctrl as ctrl" emit-to-id="box3">
+
+                            <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                            <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+                            <div ng-controller="Ctrl as ctrl" emit-to-id="box4">
+                                <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                                <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-repeat="i in [1,2]" emit-to-id="{{ 'box' + ($index + 7) }}" ng-controller="Ctrl as ctrl">
+                        <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                        <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+                        <div ng-controller="Ctrl as ctrl" emit-to-id="{{ 'box' + ($index + 7) + '1' }}">
+                            <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                            <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="scope-collection" ng-controller="Ctrl as ctrl" emit-to-id="box15">
+                    <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                    <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+
+                    <div ng-controller="Ctrl as ctrl" emit-to-id="box12">
+                        <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                        <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+
+                        <div ng-controller="Ctrl as ctrl" emit-to-id="box13">
+
+                            <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                            <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+                            <div ng-controller="Ctrl as ctrl" emit-to-id="box14">
+                                <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
+                                <span>Emit Id: {{ $$emitToId() }}<br>{{ ctrl.eventText }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="ex2" class="app">
+            <h2>Example 2 &mdash; Scope#$emitSpan</h2>
+            <p>Press the "Emit Span" button to emit an event to all direct sibling scopes (outward, starting from the scope in which you pressed the button)</p>
+
+            <div class="example">
+                <div class="control">
+                    <button ng-click="$broadcast('clear')">Clear Event Text</button>
+                </div>
+                <div class="scope-collection" ng-controller="Ctrl as ctrl">
+                    <div class="block" ng-controller="Ctrl as ctrl">
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                    </div>
+
+                    <div class="block" ng-controller="Ctrl as ctrl">
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                            <span>{{ ctrl.eventText }}</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="scope-collection" ng-controller="Ctrl as ctrl">
+                    <div ng-controller="Ctrl as ctrl">
+                        <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                        <span>{{ ctrl.eventText }}</span>
+                    </div>
+                    <div ng-controller="Ctrl as ctrl">
+                        <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                        <span>{{ ctrl.eventText }}</span>
+                    </div>
+                    <div ng-controller="Ctrl as ctrl">
+                        <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                        <span>{{ ctrl.eventText }}</span>
+                    </div>
+                    <div ng-controller="Ctrl as ctrl">
+                        <button ng-click="ctrl.spanEvent()">Emit Span</button>
+                        <span>{{ ctrl.eventText }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="ex3" class="app">
+            <h2>Example 3 &mdash; Scope#$emitSpanVia</h2>
+            <p>Press the "Emit Span Via" button to emit an event to all equally descended cousin scopes</p>
+
+            <div class="example">
+                <div class="control">
+                    <button ng-click="$broadcast('clear')">Clear Event Text</button>
+                </div>
+
+                <div class="scope-collection" emit-to-id="gp1" ng-controller="Ctrl as ctrl">
+                    <span>{{ $$emitToId() }}</span>
+                    <div ng-repeat="i in [1,2,3,4]" ng-controller="Ctrl as ctrl">
+                        <button ng-click="ctrl.spanVia()">Emit Span Via</button>
+                        <span>{{ ctrl.eventText }}</span>
+
+                        <div ng-controller="Ctrl as ctrl">
+                            <button ng-click="ctrl.spanVia()">Emit Span Via</button>
+                            <span>{{ ctrl.eventText }}</span>
+
+                            <div ng-controller="Ctrl as ctrl">
+                                <button ng-click="ctrl.spanVia()">Emit Span Via</button>
+                                <span>{{ ctrl.eventText }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    <script src="../angular-emit-to.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
