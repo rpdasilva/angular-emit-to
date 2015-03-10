@@ -16,7 +16,7 @@
             <div class="example">
                 <div class="control">
                     <label>Emit event to id: <input type="text" ng-model="$root.emitId" ng-init="$root.emitId = 'box81'"></label>
-                    <button ng-click="$broadcast('clear')">Clear All Event Text</button>
+                    <button ng-click="$broadcast('clear')">Clear Event Text</button>
                 </div>
                 <div class="scope-collection" ng-controller="Ctrl as ctrl" emit-to-id="box1">
                     <span><button ng-click="ctrl.emitToExample()">Emit From Here</button></span>
