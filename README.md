@@ -172,7 +172,7 @@ $scope.$emitSpanVia("gp1", "sample");
 
 ## Examples
 
-Try out the examples [here](http://rpdasilva.github.io/angular-emit-to/example/index.html)
+Try out the examples [here](http://rpdasilva.github.io/angular-emit-to/)
 
 
 ## Todos
