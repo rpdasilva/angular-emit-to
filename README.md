@@ -3,7 +3,7 @@
 
 ## An AngularJS module that provides new event dispatch paths to the existing event model
 
-Angular provides two methods for dispatching events `Scope#$broadcast` which dispatches an event downward through all of its children scopes, and `Scope#$emit` which dispatches an event upward through the scope hierarchy. Both will call all registered listeners along the way and start from the scope the method was called from.
+Angular provides two methods for dispatching events `Scope#$broadcast` which dispatches an event downwards to all child scopes, and `Scope#$emit` which dispatches an event upward through the scope hierarchy. Both will call all registered listeners along the way and start from the scope the method was called from.
 
 In cases where neither `$emit` nor `$broadcast` is suitable, Emit-To provides additional, more targetted path options.
 
